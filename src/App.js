@@ -1,25 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
+export default function App() {
+  // let email:string = 'ewelinadubiel92@gmail.com';
+  const [email, setEmail] = useState('ewelinadubiel92@gmail.com');
+
+  function handleChange(event) {
+    setEmail(event.target.value);
+  }
+
+  let message = <div>Masz krótki adres</div>;
+  if (email.length > 15) {
+    message = <div>Masz bardzo długi adres</div>
+  }else if (email.length > 5) {
+    message = <div>Masz w porządku adres</div>
+  }
+
+  let header1 = <h1>System do zapisów na zajęcia</h1>
+  let header2 = <h2>Twój email to: {email}</h2>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {header1}
+        {header2}
+        {message}
+      <input type="text" onChange={handleChange}/>
+
     </div>
   );
 }
 
-export default App;
+// export default App;
