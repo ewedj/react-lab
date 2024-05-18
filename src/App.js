@@ -10,6 +10,7 @@ export default function App() {
     setEmail(event.target.value);
   }
 
+
   let message = <div>Masz krótki adres</div>;
   if (email.length > 15) {
     message = <div>Masz bardzo długi adres</div>
@@ -25,7 +26,8 @@ export default function App() {
         {header1}
         {header2}
         {message}
-      <input type="text" onChange={handleChange}/>
+      <input type="text" onChange={handleChange}/> <button type="button" onClick={() => alert(email)}>
+      Wyświetl mój email w alercie</button>
 
     </div>
   );
