@@ -1,4 +1,3 @@
-
 import {useState} from "react";
 
 export default function LoginForm(props) {
@@ -7,8 +6,6 @@ export default function LoginForm(props) {
     return <div>
         <label>Zaloguj się e-mailem</label>
         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
-        <button type="button" onClick={() => props.onLogin(email)}>
-            {props.buttonLabel || 'Zaloguj'}
-        </button>
+        <button type="button" onClick={() => props.onLogin(email)}>{props.buttonLabel || 'Zaloguj'}</button>
     </div>;
 }
