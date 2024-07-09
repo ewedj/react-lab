@@ -27,6 +27,19 @@
 .App-link {
   color: #61dafb;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+td > button {
+  margin-left: 3px;
+}
 
 @keyframes App-logo-spin {
   from {
